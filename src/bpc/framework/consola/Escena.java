@@ -13,9 +13,9 @@ public abstract class Escena implements ElementoJuego{
     public Escena(){}
     @Override
     public void inicializar(){
-        if (this.consola==null|this.juego==null){
-            throw new IllegalStateException("hay que añadir la escena al juego para poder inicializarla");
-        }
+       // if (this.consola==null|this.juego==null){
+         //   throw new IllegalStateException("hay que añadir la escena al juego para poder inicializarla");
+        //}
 
         this.objetos=new ArrayList<>();
         añadirObjetosIniciales();
