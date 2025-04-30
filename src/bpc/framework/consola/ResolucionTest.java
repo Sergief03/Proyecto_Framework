@@ -7,6 +7,7 @@ import java.awt.*;
 import static org.junit.Assert.*;
 
 public class ResolucionTest {
+    @Test
     public void Test1(){
         Dimension[] dimensiones = {
                 new Dimension(4096, 2160),
