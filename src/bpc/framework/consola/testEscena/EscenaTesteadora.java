@@ -16,4 +16,5 @@ public class EscenaTesteadora extends Escena {
         añadir(tester);
     }
 
+
 }

@@ -20,7 +20,7 @@ public class EscenaTest {
 
         //Comprobar que se finaliza
         escena.finalizar();
-        System.out.println("Finalizado: "+escena.getTester().inicializado());
+        System.out.println("final: "+escena.getTester().inicializado());
 
     }
 }

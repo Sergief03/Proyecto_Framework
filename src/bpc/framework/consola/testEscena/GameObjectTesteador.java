@@ -27,4 +27,5 @@ public class GameObjectTesteador extends GameObject {
     public void finalizar() {
         inicializado = false;
     }
+
 }
