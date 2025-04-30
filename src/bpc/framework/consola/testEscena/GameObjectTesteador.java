@@ -28,4 +28,5 @@ public class GameObjectTesteador extends GameObject {
         inicializado = false;
     }
 
+
 }

@@ -22,5 +22,6 @@ public class EscenaTest {
         escena.finalizar();
         System.out.println("final: "+escena.getTester().inicializado());
 
+
     }
 }
