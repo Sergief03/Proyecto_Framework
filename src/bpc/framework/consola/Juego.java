@@ -1,28 +1,65 @@
 package bpc.framework.consola;
 
-import bpc.daw.consola.Consola;
+import bpc.daw.consola.*;
 
 public class Juego {
     private Consola consola;
     private Escena escena;
     private boolean detener;
     private Resolucion resolucion;
+
     public Juego(){
-        throw new UnsupportedOperationException("Sin programar");
+
     }
-    public void iniciar(Escena e, Resolucion r){
-        throw new UnsupportedOperationException("Sin programar");
+
+    public void iniciar(Escena e,Resolucion r){
+        this.consola=new Consola("Juego",r.getResolucion().width,r.getResolucion().height);
+        this.resolucion=r;
+        setEscena(e);
+        this.detener=false;
+        Teclado teclado= consola.getTeclado();
+        CapaCanvas capaCanvas=consola.getCapaCanvas();
+        while (!this.detener) {
+            if (teclado.hayTeclaPulsada()) {
+                if (teclado.teclaPulsada(27)) {
+                    detener();
+                }
+            }
+
+            capaCanvas.cls();
+
+            this.escena.ejecutarFrame();
+
+            try {
+                Thread.sleep(13);
+            } catch (InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
+
     public Escena getEscena(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.escena;
     }
+
+    public void setEscena(Escena e){
+        this.escena=e;
+        this.escena.juego=this;
+        this.escena.consola=this.consola;
+        this.escena.inicializar();
+
+    }
+
     public void detener(){
-        throw new UnsupportedOperationException("Sin programar");
+        this.detener=true;
     }
+
     public int getAnchuraPantalla(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.resolucion.getResolucion().width;
     }
+
     public int getAlturaPantalla(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.resolucion.getResolucion().height;
     }
+
 }
