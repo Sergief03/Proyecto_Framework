@@ -11,43 +11,46 @@ public abstract class SpriteGameObject extends GameObject{
     private Point puntoInicial;
 
     public SpriteGameObject(Image img,int x ,int y){
-        throw new UnsupportedOperationException("Sin programar");
+        this.imagen=img;
+        this.puntoInicial=new Point(x,y);
     }
 
     @Override
     public void inicializar(){
-        throw new UnsupportedOperationException("Sin programar");
+        CapaSprites capaSprites=this.consola.getCapaSprites();
+        Rectangle rectangle=new Rectangle(getAnchura(),getAltura());
+        this.sprite= capaSprites.crearSprite(this.imagen,rectangle, this.puntoInicial.x,this.puntoInicial.y);
     }
 
     public int getX(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.sprite.getX();
     }
 
     public int getY(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.sprite.getY();
     }
 
     public int getAnchura(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.imagen.getWidth(null);
     }
 
     public int getAltura(){
-        throw new UnsupportedOperationException("Sin programar");
+        return this.imagen.getHeight(null);
     }
 
     public void moverX(int cx){
-        throw new UnsupportedOperationException("Sin programar");
+        this.sprite.moverX(cx);
     }
 
     public void moverY(int cy){
-        throw new UnsupportedOperationException("Sin programar");
+        this.sprite.moverY(cy);
     }
 
     public void setX(int x){
-        throw new UnsupportedOperationException("Sin programar");
+        moverX(x-this.sprite.getX());
     }
 
     public void setY(int y){
-        throw new UnsupportedOperationException("Sin programar");
+        moverY(y-this.sprite.getY());
     }
 }
