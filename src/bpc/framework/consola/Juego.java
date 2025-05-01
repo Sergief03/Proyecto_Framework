@@ -13,7 +13,7 @@ public class Juego {
     }
 
     public void iniciar(Escena e,Resolucion r){
-        this.consola=new Consola("Juego",r.getResolucion().width,r.getResolucion().height);
+        this.consola=new Consola("Juego",r.getResolution().width,r.getResolution().height);
         this.resolucion=r;
         setEscena(e);
         this.detener=false;
@@ -55,11 +55,11 @@ public class Juego {
     }
 
     public int getAnchuraPantalla(){
-        return this.resolucion.getResolucion().width;
+        return this.resolucion.getResolution().width;
     }
 
     public int getAlturaPantalla(){
-        return this.resolucion.getResolucion().height;
+        return this.resolucion.getResolution().height;
     }
 
 }

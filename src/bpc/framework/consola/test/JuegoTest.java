@@ -1,8 +1,9 @@
 package bpc.framework.consola.test;
 
-import bcp.framework.consola.Escena;
-import bcp.framework.consola.Juego;
-import bcp.framework.consola.Resolucion;
+import bpc.framework.consola.Escena;
+import bpc.framework.consola.Juego;
+import bpc.framework.consola.Resolucion;
+import bpc.framework.consola.testEscena.EscenaTesteadora;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
